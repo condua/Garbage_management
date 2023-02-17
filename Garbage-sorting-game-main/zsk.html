@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+	</head>
+	<body>
+		<!-- 开始界面 -->
+		<div class="container zsk">
+			<div class="left">
+				<div onclick="showLJ(1)">Có thể tái chế</div>
+				<div onclick="showLJ(0)">Chất thải nhà bếp</div>
+				<div onclick="showLJ(2)">Chất thải nguy hại</div>
+				<div onclick="showLJ(3)">Các loại rác khác</div>
+			</div>
+			<div class="right">
+				<div class="title">Giới thiệu rác</div>
+				<div class="cont"></div>
+				<a href="index.html" class="back">Quay lại</a>
+			</div>
+		</div>
+
+		<script>
+			var lj = [{
+					name: 'Chất thải nhà bếp',
+					desc: 'Chất thải nhà bếp là một loại chất thải hữu cơ, có thể được chia thành chất thải nhà bếp nấu chín và chất thải nhà bếp thô. Chất thải nhà bếp nấu chín bao gồm thức ăn thừa, thức ăn thừa và lá rau; chất thải nhà bếp thô bao gồm vỏ trái cây, vỏ trứng, bã trà, xương và sò điệp, nói chung là nguyên liệu thô và thành phẩm hoặc chất thải được sử dụng trong sinh hoạt và ăn uống của gia đình.',
+					img:['./img/cy/26.png','./img/cy/27.png','./img/cy/28.png','./img/cy/29.png','./img/cy/30.png']
+				},
+				{
+					name: 'Rác tái chế',
+					desc: 'Rác tái chế đề cập đến rác thải sinh hoạt phù hợp để tái chế và sử dụng tài nguyên. Các loại rác tái chế chính bao gồm: giấy vụn, nhựa phế thải, kim loại phế thải, bao bì phế thải, hàng dệt phế thải, sản phẩm điện và điện tử phế thải, thủy tinh phế thải, giấy phế liệu, bao bì hỗn hợp nhựa và nhôm',
+					img:['./img/khs/13.png','./img/khs/14.png','./img/khs/15.png','./img/khs/16.png','./img/khs/17.png']
+				},
+				{
+					name: 'Chất thải nguy hại',
+					desc: 'Chất thải nguy hại là chất thải sinh hoạt gây nguy hại trực tiếp hoặc có khả năng gây hại cho sức khỏe con người hoặc môi trường tự nhiên. Chất thải nguy hại thông thường bao gồm ống đèn thải, sơn thải, thuốc trừ sâu, mỹ phẩm thải, thuốc hết hạn sử dụng, pin thải, bóng đèn thải, nhiệt kế bạc nước thải, v.v. ',
+					img:['./img/yh/13.png','./img/yh/14.png','./img/yh/11.png','./img/yh/6.png','./img/yh/7.png']
+				},
+				{
+					name: 'Chất thải khác',
+					desc: 'Rác khác là rác có nguy cơ tương đối nhỏ và không có giá trị tái sử dụng, chẳng hạn như chất thải xây dựng và chất thải sinh hoạt, thường được xử lý bằng cách chôn lấp, đốt và phân hủy hợp vệ sinh, và một số trong số chúng cũng có thể được phân giải bằng phân hủy sinh học. giun đất v.v. Rác khác là loại rác còn sót lại từ đồ tái chế, rác nhà bếp, rác nguy hại. ',
+					img:['./img/bkhs/3.png','./img/bkhs/4.png','./img/bkhs/5.png','./img/bkhs/6.png','./img/bkhs/7.png']
+				}
+			]
+
+			function showLJ(n){
+				let imgs=lj[n].img.map(item=>{
+					return '<img src="'+item+'" />'
+				}).join('')
+				document.getElementsByClassName('title')[0].innerHTML = lj[n].name 
+				document.getElementsByClassName('cont')[0].innerHTML = lj[n].desc+'<div class="case">'+imgs+'</div>'
+			}
+			showLJ(1)
+		</script>
+	</body>
+</html>
